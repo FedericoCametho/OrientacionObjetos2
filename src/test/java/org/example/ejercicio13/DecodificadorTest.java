@@ -1,16 +1,16 @@
 package org.example.ejercicio13;
 
+import org.example.ejercicio13.strategy.Novedad;
 import org.example.ejercicio13.strategy.Puntaje;
 import org.example.ejercicio13.strategy.Similaridad;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-
 public class DecodificadorTest {
 
     private Decodificador decodificador;
@@ -22,7 +22,7 @@ public class DecodificadorTest {
     private Pelicula rocky = new Pelicula("Rocky", 8.1, 1976);
     private Pelicula rambo = new Pelicula("Rambo", 7.8, 1979);
 
-    @BeforeAll
+    @BeforeEach
     public void setUp() {
         this.decodificador = new Decodificador();
         this.decodificador.addMovidesToGrid(Arrays.asList(this.thor, this.capitanAmerica, this.ironMan, this.dunkirk, this.rocky, this.rambo));
@@ -42,6 +42,9 @@ public class DecodificadorTest {
         this.decodificador.setSugerenciasStrategy(new Similaridad());
         List<Pelicula> sugerenciaSimilaridad = this.decodificador.sugererirPeliculas();
         Assertions.assertNotNull(sugerenciaSimilaridad);
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.capitanAmerica));
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.ironMan));
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.rambo));
     }
 
 
@@ -50,6 +53,18 @@ public class DecodificadorTest {
         this.decodificador.setSugerenciasStrategy(new Puntaje());
         List<Pelicula> sugerenciaSimilaridad = this.decodificador.sugererirPeliculas();
         Assertions.assertNotNull(sugerenciaSimilaridad);
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.dunkirk));
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.capitanAmerica));
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.ironMan));
+    }
+    @Test
+    public void decoTestNovedad(){
+        this.decodificador.setSugerenciasStrategy(new Novedad());
+        List<Pelicula> sugerenciaSimilaridad = this.decodificador.sugererirPeliculas();
+        Assertions.assertNotNull(sugerenciaSimilaridad);
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.dunkirk));
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.capitanAmerica));
+        Assertions.assertTrue(sugerenciaSimilaridad.contains(this.ironMan));
     }
 }
 

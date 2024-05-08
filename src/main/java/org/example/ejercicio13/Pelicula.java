@@ -43,7 +43,9 @@ public class Pelicula {
         similares.forEach(peli -> peli.agregarSimilar(this));
     }
     public void agregarSimilar(Pelicula peli){
-        this.similares.add(peli);
+        if(!this.similares.contains(peli)){
+            this.similares.add(peli);
+        }
     }
 
     public Double getPuntaje() {
