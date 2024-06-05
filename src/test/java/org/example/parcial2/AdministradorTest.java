@@ -35,11 +35,11 @@ public class AdministradorTest {
         this.realizarComprasCompleja.iniciarTarea();
 
         this.supermerado.finalizarTarea();
-        this.supermerado.setFechaFin(LocalDateTime.of(2024,6,5,21,30));
+        this.supermerado.setFechaFin(LocalDateTime.of(LocalDateTime.now().getYear(), LocalDateTime.now().getMonth(), LocalDateTime.now().getDayOfMonth(), LocalDateTime.now().getHour()+2, LocalDateTime.now().getMinute()+1));
 
 
         this.verduleria.finalizarTarea();
-        this.verduleria.setFechaFin(LocalDateTime.of(2024,6,5,20,30));
+        this.verduleria.setFechaFin(LocalDateTime.of(LocalDateTime.now().getYear(), LocalDateTime.now().getMonth(), LocalDateTime.now().getDayOfMonth(), LocalDateTime.now().getHour()+1, LocalDateTime.now().getMinute()+1));
 
 
         this.prepararLaMesa.iniciarTarea();
