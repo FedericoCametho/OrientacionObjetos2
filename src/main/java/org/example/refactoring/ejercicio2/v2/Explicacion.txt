@@ -1,0 +1,11 @@
+Malos olores:
+* codigo repetido => extract superclass ,pull up method, pull up field, pullup constrcutro body, extract method, se arma un template method y ,
+     se declara abstracto en la superclase el procesamiento que difiere para cada tipo de empleado, mientras que se mantiene en la clase padre el metodo que
+      calcula los descuentos que se repite en todos lso empelados
+        Se agrega tambien una clase abstracta intermedia para los empleados con hijos;
+
+* atributos(variables de instancia) publicos (inapropiate intimacy) -> encapsulate field
+
+* Creacion de constructores para inicializacion por parametro de las variables de instancia. Delegacion en la herencia de los distintos constructores;
+
+* Magic number: se reemplaza por variable statica de clase el valor fijo por hora para empleado planta y el valor plus por hijo tanto para planta como temporario;

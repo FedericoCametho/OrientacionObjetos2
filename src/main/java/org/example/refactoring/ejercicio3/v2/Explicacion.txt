@@ -1,0 +1,22 @@
+MALOS OLORES:
+
+* privacidad inapropiada de los atributos o variables de instancia:
+        Se cambia de public a private los atributos de la clase jugador. Encapsulate field
+
+* Falta de Inicializacion por constructor de las variables de instancia:
+    Se crea un constructor que reciba por parametro nombre y apellido e inicializa en 0 la puntuacion;
+    remove setting method, para que solo se inicialice nombre y apellido al momento de la creacion de la instancia del objeto;
+
+* Nombre de metodo poco descriptivo:
+        Rename method, se reemplaza por una firma mas descriptiva del mismo. "incrementarPuntosJugador" / "decrementarPuntosJugador"
+
+* Nombre del parametro que reciben los metodos de juego:
+    se reemplaza por un  nombre mas descriptivo, de j -> jugador.
+
+* Envidia de atributos:
+   La clase juego utiliza las variables de instancia de la clase jugador para resolver el incremento de puntos.
+   Se delega en el jugador que sepa incrementar una cierta cantidad de puntos la misma clase para asi lograr mas bajo acoplamiento;
+   Se crean los metodos en el jugador para que resuleva dicho calculo y entregue el resultado en el llamado en la clase Juego.
+
+* Magic Number:
+    se reemplaza el valor de incremento o decremento de la clase juego por una constante estatica en la clase juego;
