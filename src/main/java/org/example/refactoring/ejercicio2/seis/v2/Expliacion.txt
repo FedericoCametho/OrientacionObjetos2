@@ -1,0 +1,36 @@
+MALOS OLORES:
+
+* Numero magico:
+            Se reemplaza en la clase Pelicula, el valor limite de dias para el condicional por la constante LIMITE_DIAS_ESTRENO
+            Se reemplaza en la clase Pelicula, el valor del cargo extra por la constante CARGO_EXTRA
+            (Introduce constant)
+            Se reemplaza dentro de la nueva jerarquia, los numeros magicos para la subscripcion de familia y premium (el indice de multiplicacion)
+
+
+* Privacidad inapropiada:
+            La clase HBOO tiene publica su lista de usuarios, se lo reemplaza por private y se agregan los getter necesarios;
+
+* Inicializacion por constructor de las listas vacias:
+            Falta de constructores, se agregan constructores a las clase spara la incializacion de las listas vacias.
+            Tambiens e agregan constructores para el usuario yu que ya quede fijo su nombre e email como asi tambien para la pelicula
+
+
+* switch statement, replace conditional with polimorfism:
+    Se reemplaza el string de tipoSubscripcion por una jerarquia de clases que apliquen polimorfismo para resolver el costo de la pelicula teniendo
+    en cuenta el tipo de subscripcion. Se crea una jerarquia empleando el patron strategy, se delega en la estrategia (en este caso el tipo de
+    subscripcion el calculo del valor de la pelicula, pasando por parametro la pelicula).
+    Se reemplaza en la clase usuario el switch statement con los condicionales por un llamado al metodo de la estrategia delegando asi la responsabilidad;
+    Se reemplaza el tipo de la variable de instancia en el usuario en los metodos y lilneas donde se utilizaba
+
+
+
+* Replace temp with query :
+        Se reemplaza en la clase de usuario la variable temporal costo por el llamado a la estrategia de suscripcion que tiene el usuario asignado
+         explicado anteriormente;
+
+
+* Envidia de atributos: en vez de que el calculo del total del costo de una pelicula (costo + extra por extreno) este en el usuario o en la estrategia,
+                        se delega esto a la misma pelicula, dado que el metodo mismo del costo extra retorna 0 , se crea un metodo de costo total de la pelicula
+                        que suma el costo y el extra y lo retorna, eliminando asi el getter y el acceso a una variable de instancia de una clase externa cuando es innecesario;
+
+

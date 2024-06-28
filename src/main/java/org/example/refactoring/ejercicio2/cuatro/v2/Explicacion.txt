@@ -1,0 +1,16 @@
+MALOS OLORES:
+
+* Envidia de atributos:
+        La clase carrito le pide al itemCarrito el valor de sus variables de instancias para realizar calculos.
+        Se delega la responsabilidad de calcular el precio Del ItemCarrito a su misma clase por medio del metodo getPrecioItemCarrito()
+        Y se reemplaza en la clase Carrito por la invocacion al metodo durante la iteracion de la coleccion.
+        Extract method y move method;
+
+
+* nombre poco descriptivo del metodo:
+        se reemplaza el total() por getPrecioTotalCarrito();
+
+* Falta de constructores para la incializacion de las variables de instancia de lcas clases.
+        Se crean constructores para la incializacion de las variables de instancia de la clase al momento de su instanciacion
+
+

@@ -1,0 +1,12 @@
+MALOS OLORES:
+
+* FEATURE ENVY - ENVIDIA DE ATRIBUTOS:
+        El cliente utiliza los getters para traer los atributos de la direccion y asi generar un string formateado con la informacion.
+        Se delega dicha responsabilidad a la clase Direccion para que por medio del override del metodo toString , devuelva la informacion de su clase formateada al cliente;
+        En la clase cliente se reemplaza el procesamiento por el llamado al metodo toString de la variable de instancia direccion;
+
+* PRIVACIDAD INAPROPIADA:
+        La clase Direccion tiene sus variables de instancia con acceso publico, se reemplazan por private y se eliminan los getters dado que el modelo acotado y el procesamiento
+        del codigo que se plantea en el ejercicio, no requiere su uso al hacer la delegacion de responsabilidades a la misma Direccion para su formateo en toString
+
+ * Reemplazo de message por String.format. pero no se si es un mal olor.
