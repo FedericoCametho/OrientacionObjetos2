@@ -1,0 +1,20 @@
+MALOS OLORES:
+
+* FEATURE ENVY -> EXTRACT METHOD -> MOVE METHOD ->  :
+        La clase Cliente toma los atributos tanto de la clase Pedido como de la Clase MAterial para calcular el subtotal del valor del pedido. Se realiza un extract method
+        y luego un move method a las clases que corresponde, primero a Pedido y luego se deriva el calculo del precio de cada material a la clase Material.
+        De esta manera cada clase resuelve los calculos correspondientes con sus propios atributos y devuelve el valor a quien lo solicita. Se reemplaza iteracion y calculos
+        en la clase Cliente y posteriromente en PEdido, por las llamadas a los metodos extraidos (en este caso getPrecioTotal y calcularPuntosASumar de la clase Pedido invocados
+        en la clase Cliente y calcularPrecio de la clase Material, que es invocado al iterar la lista de materiale sen la clase Pedido.
+
+* Mal nombre de metodo -> se reemplaza el nomrbe del metodo por uno mas descriptivo, agrearPedido();
+
+* EXTRACT METHOD -> la porcion de codigo que hace la validacion e incremento de puntos se extrae a un metodo llamado sumarPuntos(), dado que dicha parte del procesamiento
+            puede ser independiente y no responde a la firma del metodo de agregarPedido
+
+* MAGIC NUMBER ->  se reemplaza el valor 1000 de la validacion para la suma o no de puntos, por una constante de clase que tenga dicho limite fijo.
+
+* REPLACE TEMP WITH QUERY -> Al extraer el recorrido de las colecciones y el procesamiento de los calculos a las clases que corresponde en la delegacion de responsabilidades,
+                Se reemplaza las variables temporales por llamados a los metodos que resuleven dichos calculos.
+
+Se reemplazan los getters que quedan en desuso al no necesitar acceder a las variables de instancia de las clases desde afuera para realizar calculos.
